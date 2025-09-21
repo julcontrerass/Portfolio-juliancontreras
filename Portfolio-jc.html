@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Mi Portfolio</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#conocimientos">Conocimientos</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#redes">Redes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="images/avatar.png" class="avatar-image">
+            </div>
+            <h1>Julian Contreras</h1>
+            <p>Desarrollador Full Stack</p>
+            <a href="#sobre-mi" class="cta-button">Conoce más sobre mí</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <h2 class="section-title fade-in">Sobre Mí</h2>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="images/about-avatar.png"  class="about-avatar-image">
+                </div>
+                <div class="about-text">
+                    <p>Soy un desarrollador backend en continuo crecimiento con conocimientos en C++, Python, JavaScript (Node.js, Next.js), y bases de datos relacionales y no relacionales como SQL y MongoDB.</p>
+                    <br>
+                    <p>Me apasiona optimizar y crear sistemas escalables, de alto rendimiento y confiables. Mi enfoque está en soluciones backend eficientes que proporcionen una base sólida para aplicaciones de gran escala.</p>
+                    <br>
+                    <p>Siempre busco nuevas oportunidades para trabajar en proyectos desafiantes que me permitan seguir aprendiendo y creciendo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONOCIMIENTOS -->
+    <section class="skills" id="conocimientos">
+        <div class="container">
+            <h2 class="section-title fade-in">Conocimientos</h2>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <h3>Frontend</h3>
+                    <div class="skills-logos">
+                        <div class="skill-logo vue">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/vuejs.png" alt="vue-js"/>
+                            <div class="skill-name">Vue 2-3</div>
+                        </div>
+                        <div class="skill-logo react">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png" alt="react-native"/>
+                            <div class="skill-name">React</div>
+                        </div>
+                        <div class="skill-logo html">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/html-5.png" alt="html-5"/>
+                            <div class="skill-name">HTML</div>
+                        </div>
+                        <div class="skill-logo css">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/css3.png" alt="css3"/>
+                            <div class="skill-name">CSS</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3>Backend</h3>
+                    <div class="skills-logos">
+                        <div class="skill-logo nodejs">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/node-js.png" alt="node-js"/>
+                            <div class="skill-name">Node.js</div>
+                        </div>
+                        <div class="skill-logo java">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/java-coffee-cup-logo.png" alt="java-coffee-cup-logo"/>
+                            <div class="skill-name">Java</div>
+                        </div>
+                        <div class="skill-logo spring">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/color/48/spring-logo.png" alt="spring-logo"/>
+                            <div class="skill-name">Spring Boot</div>
+                        </div>
+                        <div class="skill-logo express">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/express-js.png" alt="express-js"/>
+                            <div class="skill-name">Express</div>
+                        </div>
+                        <div class="skill-logo nextjs">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/nextjs.png" alt="nextjs"/>
+                            <div class="skill-name">Next.js</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3>Herramientas</h3>
+                    <div class="skills-logos">
+                        <div class="skill-logo git">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/color/48/git.png" alt="git"/>
+                            <div class="skill-name">Git</div>
+                        </div>
+                        <div class="skill-logo docker">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/docker.png" alt="docker"/>
+                            <div class="skill-name">Docker</div>
+                        </div>
+                        <div class="skill-logo aws">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/color/48/amazon-web-services.png" alt="amazon-web-services"/>
+                            <div class="skill-name">AWS</div>
+                        </div>
+                        <div class="skill-logo vscode">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/visual-studio-code-2019.png" alt="visual-studio-code-2019"/>
+                            <div class="skill-name">VS Code</div>
+                        </div>
+                        <div class="skill-logo vs">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/visual-studio.png" alt="visual-studio"/>
+                            <div class="skill-name">Visual Studio</div>
+                        </div>
+                        <div class="skill-logo windsurf">
+                            <img class="skill-icon" width="48" height="48" src="https://img.icons8.com/fluency/48/code.png" alt="windsurf"/>
+                            <div class="skill-name">Windsurf</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EDUCACIÓN -->
+    <section class="education" id="educacion">
+        <div class="container">
+            <h2 class="section-title fade-in">Educación</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Actualidad</div>
+                        <h3 class="timeline-title">Tecnicatura universitaria en programación</h3>
+                        <div class="timeline-company">Universidad Tecnológica Nacional</div>
+                        <div class="timeline-description">
+                            <p>Formación integral en desarrollo de software, arquitectura de sistemas y metodologías ágiles.</p>
+                            <ul>
+                                <li>Especialización en Backend</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">Data Analytics</h3>
+                        <div class="timeline-company">CoderHouse</div>
+                        <div class="timeline-description">
+                            <p>Certificación Data Analytics</p>
+                            <!-- <ul>
+                                
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-title">Python</h3>
+                        <div class="timeline-company">Plataforma5</div>
+                        <div class="timeline-description">
+                            <p>Curso intensivo en Python.</p>
+                            <!-- <ul>
+                                
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3 class="timeline-title">JavaScript</h3>
+                        <div class="timeline-company">CoderHouse</div>
+                        <div class="timeline-description">
+                            <p>Curso intensivo en JavaScript</p>
+                            <!-- <ul>
+                                
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EXPERIENCIA -->
+    <section class="experience" id="experiencia">
+        <div class="container">
+            <h2 class="section-title fade-in">Experiencia Laboral</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Presente</div>
+                        <h3 class="timeline-title">Desarrollador Frontend</h3>
+                        <div class="timeline-company">Social learning.</div>
+                        <div class="timeline-description">
+                            <p>Desarrollo y mantenimiento de plataformas propias de la empresa, por ejemplo teclab, ipp, onmex.</p>
+                            <ul>
+                                <li>Desarrollo de soluciones y nuevas implementacion</li>
+                                <li>Liderazgo de equipo de 4 desarrolladores juniors que realizan las practicas</li>
+                                <li>Implementacion de ia propia en la empresa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PROYECTOS -->
+    <section class="projects" id="proyectos">
+        <div class="container">
+            <h2 class="section-title fade-in">Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="./images/gravity-falls.png" alt="Gravity Falls" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gravity Falls</h3>
+                        <p class="project-description">Aplicación web inspirada en la serie animada Gravity Falls, con diseño interactivo y elementos de misterio.</p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1P2lgp2n5rE5OAGsUSH8i7wBP4fTnCxTI/view" class="project-link">Ver Demo</a>
+                            <a href="https://github.com/julcontrerass/CienOEscaleraUTN" class="project-link">Código</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="./images/cien-escalera.png" alt="Cien o Escalera" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cien o Escalera</h3>
+                        <p class="project-description">Proyecto final grupal para Programación 1 UTN</p>
+                        <div class="project-links">
+                            <!-- <a href="#" class="project-link">Ver Demo</a> -->
+                            <a href="https://github.com/julcontrerass/CienOEscaleraUTN" class="project-link">Código</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="./images/gestor-productos.png" alt="Gestor De Productos" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gestor De Productos</h3>
+                        <p class="project-description">Proyecto Final CoderHouse</p>
+                        <div class="project-links">
+                            <a href="https://proyectojscoderhouse.vercel.app/" class="project-link">Ver Demo</a>
+                            <a href="https://github.com/julcontrerass/ProyectoFinal_JulianContreras" class="project-link">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="./images/ta-te-ti.png" alt="Ta-Te-Ti" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ta-Te-Ti</h3>
+                        <p class="project-description">Proyecto Personal</p>
+                        <div class="project-links">
+                            <a href="https://ta-te-ti-git-main-julcontrerass-projec" class="project-link">Ver Demo</a>
+                            <a href="https://github.com/julcontrerass/Ta-Te-Ti" class="project-link">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="./images/nike-ecommerce.png" alt="Nike E-commerce" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Nike E-commerce</h3>
+                        <p class="project-description">Tienda online inspirada en Nike con carrito de compras, filtros y sistema de pagos integrado.</p>
+                        <div class="project-links">
+                            <a href="https://airland-9c55f.web.app/snkrs" class="project-link">Ver Demo</a>
+                            <a href="https://github.com/lauticometti/AirLand" class="project-link">Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="./images/countries.png" alt="Countries" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Countries</h3>
+                        <p class="project-description">Aplicación de búsqueda y exploración de países con información detallada y actividades personalizadas.</p>
+                        <div class="project-links">
+                            <!-- <a href="#" class="project-link">Ver Demo</a> -->
+                            <a href="https://github.com/julcontrerass/Countries-Proyecto-Personal" class="project-link">Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REDES SOCIALES -->
+    <section class="social" id="redes">
+        <div class="container">
+            <h2 class="section-title fade-in">Redes Sociales</h2>
+            <div class="social-links fade-in">
+                <a href="https://www.linkedin.com/in/juliancontreraslucero" class="social-link" title="LinkedIn">
+                    <img width="32" height="32" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
+                </a>
+                <a href="https://github.com/julcontrerass" class="social-link" title="GitHub">
+                    <img width="32" height="32" src="https://img.icons8.com/color/48/github--v1.png" alt="github"/>
+                </a>
+                <a href="jjulian.contrerass@gmail.com" class="social-link" title="Email">
+                    <img width="32" height="32" src="https://img.icons8.com/color/48/gmail-new.png" alt="email"/>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title fade-in">Contacto</h2>
+            <form class="contact-form fade-in" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Julian Contreras. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
