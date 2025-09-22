@@ -236,9 +236,8 @@ section {
 
 .about-image {
     width: 300px;
-    height: 300px;
+    height: 400px;
     border-radius: 20px;
-    background: linear-gradient(45deg, #4a5568, #2d3748);
     display: flex;
     align-items: center;
     justify-content: center;
