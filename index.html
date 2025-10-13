@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PortfolioJC</title>
+    <link rel="icon" type="image/png" href="./images/avatar.png" />
     <link rel="stylesheet" href="styles.css" />
     <!-- Vercel Web Analytics -->
     <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
@@ -15,16 +20,34 @@
     <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
-        <div class="nav-logo">Julian Contreras</div>
+        <div class="nav-logo">
+          <img src="./images/avatar-acostado.png" alt="Julian Contreras" class="nav-logo-img" />
+        </div>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre Mí</a></li>
-          <li><a href="#conocimientos">Conocimientos</a></li>
-          <li><a href="#educacion">Educación</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
-          <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#redes">Redes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#inicio" data-translate="nav.inicio">Inicio</a></li>
+          <li>
+            <a href="#sobre-mi" data-translate="nav.sobre-mi">Sobre Mí</a>
+          </li>
+          <li>
+            <a href="#conocimientos" data-translate="nav.conocimientos"
+              >Conocimientos</a
+            >
+          </li>
+          <li>
+            <a href="#educacion" data-translate="nav.educacion">Educación</a>
+          </li>
+          <li>
+            <a href="#experiencia" data-translate="nav.experiencia"
+              >Experiencia</a
+            >
+          </li>
+          <li>
+            <a href="#proyectos" data-translate="nav.proyectos">Proyectos</a>
+          </li>
+          <li><a href="#redes" data-translate="nav.redes">Redes</a></li>
+          <li>
+            <a href="#contacto" data-translate="nav.contacto">Contacto</a>
+          </li>
         </ul>
         <button class="burger" id="burger">
           <span></span>
@@ -40,22 +63,26 @@
         <div class="hero-photo">
           <img src="images/avatar.png" class="avatar-image" />
         </div>
-        <h1>Julian Contreras</h1>
-        <p>Desarrollador Full Stack</p>
-        <a href="#sobre-mi" class="cta-button">Conoce más sobre mí</a>
+        <h1 data-translate="hero.title">Julian Contreras</h1>
+        <p data-translate="hero.subtitle">Desarrollador Full Stack</p>
+        <a href="#sobre-mi" class="cta-button" data-translate="hero.cta"
+          >Conoce más sobre mí</a
+        >
       </div>
     </section>
 
     <!-- SECCIÓN SOBRE MÍ -->
     <section class="about" id="sobre-mi">
       <div class="container">
-        <h2 class="section-title fade-in">Sobre Mí</h2>
+        <h2 class="section-title fade-in" data-translate="about.title">
+          Sobre Mí
+        </h2>
         <div class="about-content fade-in">
           <div class="about-image">
             <img src="images/about-avatar.png" class="about-avatar-image" />
           </div>
           <div class="about-text">
-            <p>
+            <p data-translate="about.text1">
               Soy un desarrollador frontend con experiencia en Vue.js (Vue 2),
               enfocado en crear interfaces modernas, intuitivas y eficientes.
               Actualmente me encuentro ampliando mi perfil hacia el desarrollo
@@ -64,13 +91,16 @@
               convertirme en un desarrollador full stack.
             </p>
             <br />
-            <p>
+            <p data-translate="about.text2">
               Me apasiona aprender nuevas tecnologías, optimizar procesos y
               participar en proyectos que representen un desafío. Busco seguir
               creciendo profesionalmente, combinando mis habilidades en frontend
               con un sólido conocimiento en backend para construir aplicaciones
               completas, escalables y de alto rendimiento.
             </p>
+            <button class="cv-button" id="view-cv-btn" data-translate="about.viewCV">
+              Ver CV
+            </button>
           </div>
         </div>
       </div>
@@ -79,10 +109,12 @@
     <!-- SECCIÓN CONOCIMIENTOS -->
     <section class="skills" id="conocimientos">
       <div class="container">
-        <h2 class="section-title fade-in">Conocimientos</h2>
+        <h2 class="section-title fade-in" data-translate="skills.title">
+          Conocimientos
+        </h2>
         <div class="skills-grid">
           <div class="skill-card fade-in">
-            <h3>Frontend</h3>
+            <h3 data-translate="skills.frontend">Frontend</h3>
             <div class="skills-logos">
               <div class="skill-logo vue">
                 <img
@@ -128,7 +160,7 @@
           </div>
 
           <div class="skill-card fade-in">
-            <h3>Backend</h3>
+            <h3 data-translate="skills.backend">Backend</h3>
             <div class="skills-logos">
               <div class="skill-logo nodejs">
                 <img
@@ -180,11 +212,77 @@
                 />
                 <div class="skill-name">Next.js</div>
               </div>
+              <div class="skill-logo cpp">
+                <img
+                  class="skill-icon"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/c-plus-plus-logo.png"
+                  alt="c-plus-plus"
+                />
+                <div class="skill-name">C++</div>
+              </div>
+              <div class="skill-logo csharp">
+                <img
+                  class="skill-icon"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/c-sharp-logo.png"
+                  alt="c-sharp"
+                />
+                <div class="skill-name">C#</div>
+              </div>
+              <div class="skill-logo dotnet">
+                <img
+                  class="skill-icon"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/net-framework.png"
+                  alt="dotnet"
+                />
+                <div class="skill-name">.NET</div>
+              </div>
             </div>
           </div>
 
           <div class="skill-card fade-in">
-            <h3>Herramientas</h3>
+            <h3 data-translate="skills.database">Database</h3>
+            <div class="skills-logos">
+              <div class="skill-logo postgresql">
+                <img
+                  class="skill-icon"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/postgreesql.png"
+                  alt="postgresql"
+                />
+                <div class="skill-name">PostgreSQL</div>
+              </div>
+              <div class="skill-logo sqlserver">
+                <img
+                  class="skill-icon"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                  alt="sql-server"
+                />
+                <div class="skill-name">SQL Server</div>
+              </div>
+              <div class="skill-logo dbeaver">
+                <img
+                  class="skill-icon"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/dusk/64/dbeaver.png"
+                  alt="dbeaver"
+                />
+                <div class="skill-name">DBeaver</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-card fade-in">
+            <h3 data-translate="skills.tools">Herramientas</h3>
             <div class="skills-logos">
               <div class="skill-logo git">
                 <img
@@ -241,8 +339,8 @@
                   class="skill-icon"
                   width="48"
                   height="48"
-                  src="https://img.icons8.com/fluency/48/code.png"
-                  alt="windsurf"
+                  src="https://img.icons8.com/ios/50/windsurf-editor.png"
+                  alt="windsurf-editor"
                 />
                 <div class="skill-name">Windsurf</div>
               </div>
@@ -255,24 +353,33 @@
     <!-- SECCIÓN EDUCACIÓN -->
     <section class="education" id="educacion">
       <div class="container">
-        <h2 class="section-title fade-in">Educación</h2>
+        <h2 class="section-title fade-in" data-translate="education.title">
+          Educación
+        </h2>
         <div class="timeline">
           <div class="timeline-item fade-in">
             <div class="timeline-content">
-              <div class="timeline-date">2024 - Actualidad</div>
-              <h3 class="timeline-title">
+              <div class="timeline-date" data-translate="education.utn.period">
+                2024 - Actualidad
+              </div>
+              <h3 class="timeline-title" data-translate="education.utn.title">
                 Tecnicatura universitaria en programación
               </h3>
-              <div class="timeline-company">
+              <div
+                class="timeline-company"
+                data-translate="education.utn.institution"
+              >
                 Universidad Tecnológica Nacional
               </div>
               <div class="timeline-description">
-                <p>
+                <p data-translate="education.utn.description">
                   Formación integral en desarrollo de software, arquitectura de
                   sistemas y metodologías ágiles.
                 </p>
                 <ul>
-                  <li>Especialización en Backend</li>
+                  <li data-translate="education.utn.specialization">
+                    Especialización en Backend
+                  </li>
                 </ul>
               </div>
             </div>
@@ -280,16 +387,71 @@
 
           <div class="timeline-item fade-in">
             <div class="timeline-content">
-              <div class="timeline-date">2024</div>
-              <h3 class="timeline-title">Data Analytics</h3>
-              <div class="timeline-company">CoderHouse</div>
+              <div
+                class="timeline-date"
+                data-translate="education.Talento.period"
+              >
+                2025 - Actualidad
+              </div>
+              <h3
+                class="timeline-title"
+                data-translate="education.Talento.title"
+              >
+                Back-End / Java
+              </h3>
+              <div
+                class="timeline-company"
+                data-translate="education.Talento.institution"
+              >
+                Talento Tech
+              </div>
               <div class="timeline-description">
-                <p>Certificación Data Analytics</p>
+                <p data-translate="education.Talento.description">
+                  Formacion en Backend con Java, Spring Boot, bases de datos
+                </p>
+                <ul>
+                  <li data-translate="education.Talento.specialization">
+                    Especialización en Backend
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div class="timeline-content">
+              <div
+                class="timeline-date"
+                data-translate="education.analytics.period"
+              >
+                2024
+              </div>
+              <h3
+                class="timeline-title"
+                data-translate="education.analytics.title"
+              >
+                Data Analytics
+              </h3>
+              <div
+                class="timeline-company"
+                data-translate="education.analytics.institution"
+              >
+                CoderHouse
+              </div>
+              <div class="timeline-description">
+                <p data-translate="education.analytics.description">
+                  Certificación Data Analytics
+                </p>
                 <!-- <ul>
 
                             </ul> -->
               </div>
-              <button class="certificate-btn" data-certificate="images/Certificados/certificadoGoogleAnalytics.png" data-type="image">
+              <button
+                class="certificate-btn"
+                data-certificate="images/Certificados/certificadoGoogleAnalytics.png"
+                data-type="image"
+                data-translate="education.certificate"
+              >
                 Ver Certificado
               </button>
             </div>
@@ -297,16 +459,38 @@
 
           <div class="timeline-item fade-in">
             <div class="timeline-content">
-              <div class="timeline-date">2024</div>
-              <h3 class="timeline-title">Python</h3>
-              <div class="timeline-company">Plataforma5</div>
+              <div
+                class="timeline-date"
+                data-translate="education.python.period"
+              >
+                2024
+              </div>
+              <h3
+                class="timeline-title"
+                data-translate="education.python.title"
+              >
+                Python
+              </h3>
+              <div
+                class="timeline-company"
+                data-translate="education.python.institution"
+              >
+                Plataforma5
+              </div>
               <div class="timeline-description">
-                <p>Curso intensivo en Python.</p>
+                <p data-translate="education.python.description">
+                  Curso intensivo en Python.
+                </p>
                 <!-- <ul>
 
                             </ul> -->
               </div>
-              <button class="certificate-btn" data-certificate="images/Certificados/certificadoPython.pdf" data-type="pdf">
+              <button
+                class="certificate-btn"
+                data-certificate="images/Certificados/certificadoPython.pdf"
+                data-type="pdf"
+                data-translate="education.certificate"
+              >
                 Ver Certificado
               </button>
             </div>
@@ -314,16 +498,32 @@
 
           <div class="timeline-item fade-in">
             <div class="timeline-content">
-              <div class="timeline-date">2023</div>
-              <h3 class="timeline-title">JavaScript</h3>
-              <div class="timeline-company">CoderHouse</div>
+              <div class="timeline-date" data-translate="education.js.period">
+                2023
+              </div>
+              <h3 class="timeline-title" data-translate="education.js.title">
+                JavaScript
+              </h3>
+              <div
+                class="timeline-company"
+                data-translate="education.js.institution"
+              >
+                CoderHouse
+              </div>
               <div class="timeline-description">
-                <p>Curso intensivo en JavaScript</p>
+                <p data-translate="education.js.description">
+                  Curso intensivo en JavaScript
+                </p>
                 <!-- <ul>
 
                             </ul> -->
               </div>
-              <button class="certificate-btn" data-certificate="images/Certificados/certificadoJs.pdf" data-type="pdf">
+              <button
+                class="certificate-btn"
+                data-certificate="images/Certificados/certificadoJs.pdf"
+                data-type="pdf"
+                data-translate="education.certificate"
+              >
                 Ver Certificado
               </button>
             </div>
@@ -335,21 +535,40 @@
     <!-- SECCIÓN EXPERIENCIA -->
     <section class="experience" id="experiencia">
       <div class="container">
-        <h2 class="section-title fade-in">Experiencia Laboral</h2>
+        <h2 class="section-title fade-in" data-translate="experience.title">
+          Experiencia Laboral
+        </h2>
         <div class="timeline">
           <div class="timeline-item fade-in">
             <div class="timeline-content">
-              <div class="timeline-date">2025 - Presente</div>
-              <h3 class="timeline-title">Desarrollador Frontend</h3>
-              <div class="timeline-company">Social learning.</div>
+              <div
+                class="timeline-date"
+                data-translate="experience.social.period"
+              >
+                2025 - Presente
+              </div>
+              <h3
+                class="timeline-title"
+                data-translate="experience.social.title"
+              >
+                Desarrollador Frontend
+              </h3>
+              <div
+                class="timeline-company"
+                data-translate="experience.social.company"
+              >
+                Social learning.
+              </div>
               <div class="timeline-description">
-                <p>
+                <p data-translate="experience.social.description">
                   Desarrollo y mantenimiento de plataformas propias de la
                   empresa, por ejemplo teclab, ipp, onmex.
                 </p>
                 <ul>
-                  <li>Desarrollo de soluciones y nuevas implementacion</li>
-                  <li>
+                  <li data-translate="experience.social.task1">
+                    Desarrollo de soluciones y nuevas implementacion
+                  </li>
+                  <li data-translate="experience.social.task2">
                     Liderazgo de equipo de 4 desarrolladores juniors que
                     realizan las practicas
                   </li>
@@ -364,227 +583,729 @@
     <!-- SECCIÓN PROYECTOS -->
     <section class="projects" id="proyectos">
       <div class="container">
-        <h2 class="section-title fade-in">Proyectos</h2>
+        <h2 class="section-title fade-in" data-translate="projects.title">
+          Proyectos
+        </h2>
+
+        <!-- Filtros de proyectos -->
+        <div class="projects-filters fade-in">
+          <button
+            class="filter-btn active"
+            data-filter="all"
+            data-translate="projects.filter.all"
+          >
+            Todos
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="personal"
+            data-translate="projects.filter.personal"
+          >
+            Personales
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="course"
+            data-translate="projects.filter.course"
+          >
+            Cursos
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="university"
+            data-translate="projects.filter.university"
+          >
+            Facultad
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="sold"
+            data-translate="projects.filter.sold"
+          >
+            Vendidos
+          </button>
+        </div>
+
         <div class="projects-grid">
-          <div class="project-card fade-in">
+          <div
+            class="project-card fade-in"
+            data-project="grito"
+            data-category="sold"
+          >
+            <div class="project-image">
+              <img
+                src="./images/Carnaval2025.png"
+                alt="Grito De Carnaval 2025"
+                class="project-img"
+              />
+              <span
+                class="project-badge project-badge-sold"
+                data-translate="projects.category.sold"
+                >Vendido</span
+              >
+            </div>
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.grito.title">
+                Grito De Carnaval 2025
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
+                >
+                  Ver más
+                </button>
+              </div>
+            </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.grito.desc1">
+                  Landing page desarrollada para un cliente que organizaba el
+                  evento "Grito De Carnaval 2025". Proyecto freelance
+                  completamente vendido y entregado.
+                </p>
+                <p data-translate="projects.grito.desc2">
+                  <strong>Características del proyecto:</strong>
+                </p>
+                <p data-translate="projects.grito.desc3">
+                  • Diseño moderno y atractivo adaptado a la temática del
+                  carnaval<br />
+                  • Información completa del evento (fecha, lugar, lineup de
+                  artistas)<br />
+                  • Sección de precios con diferentes categorías de entradas<br />
+                  • Galería de fotos de ediciones anteriores<br />
+                  • Formulario de contacto y compra de tickets<br />
+                  • Diseño responsive para móviles y tablets<br />
+                  • Optimización de rendimiento y SEO
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+                  alt="React"
+                  title="React"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/nextjs.png"
+                  alt="Next.js"
+                  title="Next.js"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/css3.png"
+                  alt="CSS"
+                  title="CSS"
+                />
+              </div>
+              <div class="project-demo-link">
+                https://gritodecarnaval.vercel.app
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card fade-in"
+            data-project="promoweb"
+            data-category="university"
+          >
+            <div class="project-image">
+              <img
+                src="./images/promo-web.png"
+                alt="Promo WEB"
+                class="project-img"
+              />
+              <span
+                class="project-badge project-badge-university"
+                data-translate="projects.category.university"
+                >Facultad</span
+              >
+            </div>
+            <div class="project-card-footer">
+              <h3
+                class="project-title"
+                data-translate="projects.promoweb.title"
+              >
+                Promo WEB
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
+                >
+                  Ver más
+                </button>
+                <a
+                  href="https://github.com/julcontrerass/TPWeb_Equipo8A.git"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
+                  >Código</a
+                >
+              </div>
+            </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.promoweb.desc1">
+                  Aplicación web para gestión de promociones y sorteos. Los
+                  clientes ingresan códigos de vouchers obtenidos en compras
+                  para participar por premios.
+                </p>
+                <p data-translate="projects.promoweb.desc2">
+                  <strong>Características principales:</strong>
+                </p>
+                <p data-translate="projects.promoweb.desc3">
+                  • Validación de códigos promocionales contra base de datos<br />
+                  • Sistema de selección de premios<br />
+                  • Registro de clientes con validación de DNI<br />
+                  • Pre-carga de datos para clientes existentes<br />
+                  • Notificación por email de participación exitosa<br />
+                  • Arquitectura en capas (Modelo, Negocio, Presentación, Acceso
+                  a Datos)<br />
+                  • Validación completa de datos (emails, números, campos
+                  requeridos)
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/color/48/c-sharp-logo.png"
+                  alt="C#"
+                  title="C#"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/asp.png"
+                  alt="ASP.NET"
+                  title="ASP.NET"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                  alt="SQL Server"
+                  title="SQL Server"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card fade-in"
+            data-project="gestion"
+            data-category="university"
+          >
+            <div class="project-image">
+              <img
+                src="./images/gestion-articulos.png"
+                alt="Gestión de Artículos"
+                class="project-img"
+              />
+              <span
+                class="project-badge project-badge-university"
+                data-translate="projects.category.university"
+                >Facultad</span
+              >
+            </div>
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.gestion.title">
+                Gestión de Artículos
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
+                >
+                  Ver más
+                </button>
+                <a
+                  href="https://github.com/julcontrerass/TPWinForm_equipo-8A.git"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
+                  >Código</a
+                >
+              </div>
+            </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.gestion.desc1">
+                  Aplicación de escritorio para la gestión de artículos de un
+                  catálogo comercial genérico. Desarrollada en C# con Windows
+                  Forms y SQL Server.
+                </p>
+                <p data-translate="projects.gestion.desc2">
+                  <strong>Funcionalidades:</strong>
+                </p>
+                <p data-translate="projects.gestion.desc3">
+                  • Listado y búsqueda de artículos por múltiples criterios<br />
+                  • CRUD completo (Agregar, modificar, eliminar artículos)<br />
+                  • Gestión de marcas y categorías<br />
+                  • Soporte para múltiples imágenes por artículo<br />
+                  • Persistencia en base de datos SQL Server<br />
+                  • Arquitectura en capas (Modelo, Negocio, Presentación, Acceso
+                  a Datos)
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/color/48/c-sharp-logo.png"
+                  alt="C#"
+                  title="C#"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/net-framework.png"
+                  alt=".NET"
+                  title=".NET"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                  alt="SQL Server"
+                  title="SQL Server"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="project-card fade-in"
+            data-project="gravity"
+            data-category="university"
+          >
             <div class="project-image">
               <img
                 src="./images/gravity-falls.png"
                 alt="Gravity Falls"
                 class="project-img"
               />
+              <span
+                class="project-badge project-badge-university"
+                data-translate="projects.category.university"
+                >Facultad</span
+              >
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Gravity Falls</h3>
-              <p class="project-description">
-                Desarrollé un videojuego estilo RPG inspirado en Gravity Falls
-                como proyecto final de Programación II (UTN), utilizando C++ y
-                la librería SFML
-              </p>
-              <p class="project-description">El juego incluye:</p>
-
-              <p class="project-description">
-                Menú interactivo con créditos, nueva partida y carga de partida.
-                Múltiples mapas, diálogos, recolección de ítems y combates con
-                disparos.Sistema de guardado y carga mediante archivos .dat
-              </p>
-              <div class="project-links">
-                <a
-                  href="https://drive.google.com/file/d/1P2lgp2n5rE5OAGsUSH8i7wBP4fTnCxTI/view"
-                  class="project-link"
-                  >Ver Demo</a
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.gravity.title">
+                Gravity Falls
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
                 >
+                  Ver más
+                </button>
                 <a
-                  href="https://github.com/julcontrerass/CienOEscaleraUTN"
-                  class="project-link"
+                  href="https://github.com/julcontrerass/GravityFallsGame"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
                   >Código</a
                 >
               </div>
             </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.gravity.desc1">
+                  Desarrollé un videojuego estilo RPG inspirado en Gravity Falls
+                  como proyecto final de Programación II (UTN), utilizando C++ y
+                  la librería SFML
+                </p>
+                <p data-translate="projects.gravity.desc2">El juego incluye:</p>
+                <p data-translate="projects.gravity.desc3">
+                  Menú interactivo con créditos, nueva partida y carga de
+                  partida. Múltiples mapas, diálogos, recolección de ítems y
+                  combates con disparos.Sistema de guardado y carga mediante
+                  archivos .dat
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/color/48/c-plus-plus-logo.png"
+                  alt="C++"
+                  title="C++"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/code.png"
+                  alt="SFML"
+                  title="SFML"
+                />
+              </div>
+              <div class="project-demo-link">
+                https://drive.google.com/file/d/1P2lgp2n5rE5OAGsUSH8i7wBP4fTnCxTI/view
+              </div>
+            </div>
           </div>
 
-          <div class="project-card fade-in">
+          <div
+            class="project-card fade-in"
+            data-project="cien"
+            data-category="university"
+          >
             <div class="project-image">
               <img
                 src="./images/cien-escalera.png"
                 alt="Cien o Escalera"
                 class="project-img"
               />
+              <span
+                class="project-badge project-badge-university"
+                data-translate="projects.category.university"
+                >Facultad</span
+              >
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Cien o Escalera</h3>
-              <p class="project-description">
-                Desarrollé Cien o Escalera, un juego de dados creado en C/C++
-                con Code::Blocks como parte de un trabajo grupal en la UTN.
-              </p>
-
-              <p class="project-description">Características principales:</p>
-
-              <p class="project-description">
-                Modalidad de juego individual o en pareja. Menú principal con
-                opciones de nueva partida, puntuación más alta y salida.
-                Interfaz basada en menús interactivos. Este proyecto destaca mis
-                habilidades de programación en C++ y colaboración en equipo.
-              </p>
-              <div class="project-links">
-                <!-- <a href="#" class="project-link">Ver Demo</a> -->
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.cien.title">
+                Cien o Escalera
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
+                >
+                  Ver más
+                </button>
                 <a
                   href="https://github.com/julcontrerass/CienOEscaleraUTN"
-                  class="project-link"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
                   >Código</a
                 >
               </div>
             </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.cien.desc1">
+                  Desarrollé Cien o Escalera, un juego de dados creado en C/C++
+                  con Code::Blocks como parte de un trabajo grupal en la UTN.
+                </p>
+                <p data-translate="projects.cien.desc2">
+                  Características principales:
+                </p>
+                <p data-translate="projects.cien.desc3">
+                  Modalidad de juego individual o en pareja. Menú principal con
+                  opciones de nueva partida, puntuación más alta y salida.
+                  Interfaz basada en menús interactivos. Este proyecto destaca
+                  mis habilidades de programación en C++ y colaboración en
+                  equipo.
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/color/48/c-plus-plus-logo.png"
+                  alt="C++"
+                  title="C++"
+                />
+              </div>
+            </div>
           </div>
 
-          <div class="project-card fade-in">
+          <div
+            class="project-card fade-in"
+            data-project="gestor"
+            data-category="course"
+          >
             <div class="project-image">
               <img
                 src="./images/gestor-productos.png"
                 alt="Gestor De Productos"
                 class="project-img"
               />
+              <span
+                class="project-badge project-badge-course"
+                data-translate="projects.category.course"
+                >Curso</span
+              >
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Gestor De Productos</h3>
-              <p class="project-description">
-                Desarrollé un proyecto final en JavaScript para el curso de
-                CoderHouse, destacado dentro del top 10 de la cursada.
-              </p>
-
-              <p class="project-description">
-                El sistema permite agregar, editar y eliminar productos para su
-                posterior publicación en una tienda. El diseño fue implementado
-                con HTML y CSS, mientras que la lógica y funcionalidades se
-                desarrollaron en JavaScript.
-              </p>
-              <div class="project-links">
-                <a
-                  href="https://proyectojscoderhouse.vercel.app/"
-                  class="project-link"
-                  >Ver Demo</a
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.gestor.title">
+                Gestor De Productos
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
                 >
+                  Ver más
+                </button>
                 <a
                   href="https://github.com/julcontrerass/ProyectoFinal_JulianContreras"
-                  class="project-link"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
                   >Código</a
                 >
               </div>
             </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.gestor.desc1">
+                  Desarrollé un proyecto final en JavaScript para el curso de
+                  CoderHouse, destacado dentro del top 10 de la cursada.
+                </p>
+                <p data-translate="projects.gestor.desc2">
+                  El sistema permite agregar, editar y eliminar productos para
+                  su posterior publicación en una tienda. El diseño fue
+                  implementado con HTML y CSS, mientras que la lógica y
+                  funcionalidades se desarrollaron en JavaScript.
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/fluency/48/html-5.png"
+                  alt="HTML"
+                  title="HTML"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/css3.png"
+                  alt="CSS"
+                  title="CSS"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/javascript.png"
+                  alt="JavaScript"
+                  title="JavaScript"
+                />
+              </div>
+              <div class="project-demo-link">
+                https://proyectojscoderhouse.vercel.app/
+              </div>
+            </div>
           </div>
 
-          <div class="project-card fade-in">
+          <div
+            class="project-card fade-in"
+            data-project="tateti"
+            data-category="personal"
+          >
             <div class="project-image">
               <img
                 src="./images/ta-te-ti.png"
                 alt="Ta-Te-Ti"
                 class="project-img"
               />
+              <span
+                class="project-badge project-badge-personal"
+                data-translate="projects.category.personal"
+                >Personal</span
+              >
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Ta-Te-Ti</h3>
-              <p class="project-description">
-                Desarrollé Ta-Te-Ti, un juego clásico implementado con React.js
-                y CSS.
-              </p>
-              <p class="project-description">
-                Permite a dos jugadores competir y lleva un registro de
-                puntuaciones, destacando por su simplicidad y una implementación
-                efectiva con tecnologías modernas.
-              </p>
-              <div class="project-links">
-                <a
-                  href="https://ta-te-ti-git-main-julcontrerass-projec"
-                  class="project-link"
-                  >Ver Demo</a
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.tateti.title">
+                Ta-Te-Ti
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
                 >
+                  Ver más
+                </button>
                 <a
                   href="https://github.com/julcontrerass/Ta-Te-Ti"
-                  class="project-link"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
                   >Código</a
                 >
               </div>
             </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.tateti.desc1">
+                  Desarrollé Ta-Te-Ti, un juego clásico implementado con
+                  React.js y CSS.
+                </p>
+                <p data-translate="projects.tateti.desc2">
+                  Permite a dos jugadores competir y lleva un registro de
+                  puntuaciones, destacando por su simplicidad y una
+                  implementación efectiva con tecnologías modernas.
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+                  alt="React"
+                  title="React"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/css3.png"
+                  alt="CSS"
+                  title="CSS"
+                />
+              </div>
+              <div class="project-demo-link">
+                https://ta-te-ti-git-main-julcontrerass-projec
+              </div>
+            </div>
           </div>
 
-          <div class="project-card fade-in">
+          <div
+            class="project-card fade-in"
+            data-project="nike"
+            data-category="personal"
+          >
             <div class="project-image">
               <img
                 src="./images/nike-ecommerce.png"
                 alt="Nike E-commerce"
                 class="project-img"
               />
+              <span
+                class="project-badge project-badge-personal"
+                data-translate="projects.category.personal"
+                >Personal</span
+              >
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Nike E-commerce</h3>
-              <p class="project-description">
-                Desarrollé AirLand, una aplicación de ecommerce de zapatillas
-                inspirada en tiendas como Nike
-              </p>
-
-              <p class="project-description">
-                La app permite explorar, seleccionar y comprar productos,
-                ofreciendo una experiencia de compra fluida. Este proyecto
-                resalta mis habilidades en trabajo en equipo y en la
-                construcción de plataformas ecommerce con tecnologías modernas.
-              </p>
-              <p class="project-description">
-                Frontend: JavaScript y React
-
-                <br />
-                Node.js y Express
-                <br />
-                Base de datos: Firebase
-              </p>
-              <div class="project-links">
-                <a
-                  href="https://airland-9c55f.web.app/snkrs"
-                  class="project-link"
-                  >Ver Demo</a
+            <div class="project-card-footer">
+              <h3 class="project-title" data-translate="projects.nike.title">
+                Nike E-commerce
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
                 >
+                  Ver más
+                </button>
                 <a
                   href="https://github.com/lauticometti/AirLand"
-                  class="project-link"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
                   >Código</a
                 >
               </div>
             </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.nike.desc1">
+                  Desarrollé AirLand, una aplicación de ecommerce de zapatillas
+                  inspirada en tiendas como Nike
+                </p>
+                <p data-translate="projects.nike.desc2">
+                  La app permite explorar, seleccionar y comprar productos,
+                  ofreciendo una experiencia de compra fluida. Este proyecto
+                  resalta mis habilidades en trabajo en equipo y en la
+                  construcción de plataformas ecommerce con tecnologías
+                  modernas.
+                </p>
+                <p data-translate="projects.nike.desc3">
+                  Frontend: JavaScript y React
+                  <br />
+                  Node.js y Express
+                  <br />
+                  Base de datos: Firebase
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+                  alt="React"
+                  title="React"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/node-js.png"
+                  alt="Node.js"
+                  title="Node.js"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/express-js.png"
+                  alt="Express"
+                  title="Express"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/firebase.png"
+                  alt="Firebase"
+                  title="Firebase"
+                />
+              </div>
+              <div class="project-demo-link">
+                https://airland-9c55f.web.app/snkrs
+              </div>
+            </div>
           </div>
 
-          <div class="project-card fade-in">
+          <div
+            class="project-card fade-in"
+            data-project="countries"
+            data-category="personal"
+          >
             <div class="project-image">
               <img
                 src="./images/countries.png"
                 alt="Countries"
                 class="project-img"
               />
+              <span
+                class="project-badge project-badge-personal"
+                data-translate="projects.category.personal"
+                >Personal</span
+              >
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Countries</h3>
-              <p class="project-description">
-                Desarrollé una aplicación web de gestión y visualización de
-                países
-              </p>
-              <p class="project-description">
-                La app permite buscar y consultar información detallada de
-                distintos países, brindando una experiencia fluida y amigable.
-                Este proyecto demuestra mi capacidad para trabajar con
-                tecnologías modernas y crear soluciones efectivas de
-                visualización de datos en la web.
-              </p>
-              <p class="project-description">
-                Frontend: JavaScript, React y CSS
-                <br />Backend: Node.js
-                <br />
-                Base de datos: SQL
-              </p>
-              <div class="project-links">
-                <!-- <a href="#" class="project-link">Ver Demo</a> -->
+            <div class="project-card-footer">
+              <h3
+                class="project-title"
+                data-translate="projects.countries.title"
+              >
+                Countries
+              </h3>
+              <div class="project-actions">
+                <button
+                  class="btn-view-more"
+                  data-translate="projects.viewMore"
+                >
+                  Ver más
+                </button>
                 <a
                   href="https://github.com/julcontrerass/Countries-Proyecto-Personal"
-                  class="project-link"
+                  class="btn-view-code"
+                  target="_blank"
+                  data-translate="projects.code"
                   >Código</a
                 >
+              </div>
+            </div>
+            <!-- Datos del proyecto (ocultos, para el modal) -->
+            <div class="project-data" style="display: none">
+              <div class="project-full-desc">
+                <p data-translate="projects.countries.desc1">
+                  Desarrollé una aplicación web de gestión y visualización de
+                  países
+                </p>
+                <p data-translate="projects.countries.desc2">
+                  La app permite buscar y consultar información detallada de
+                  distintos países, brindando una experiencia fluida y amigable.
+                  Este proyecto demuestra mi capacidad para trabajar con
+                  tecnologías modernas y crear soluciones efectivas de
+                  visualización de datos en la web.
+                </p>
+                <p data-translate="projects.countries.desc3">
+                  Frontend: JavaScript, React y CSS
+                  <br />Backend: Node.js
+                  <br />
+                  Base de datos: SQL
+                </p>
+              </div>
+              <div class="project-tech">
+                <img
+                  src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+                  alt="React"
+                  title="React"
+                />
+                <img
+                  src="https://img.icons8.com/fluency/48/node-js.png"
+                  alt="Node.js"
+                  title="Node.js"
+                />
+                <img
+                  src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                  alt="SQL"
+                  title="SQL"
+                />
               </div>
             </div>
           </div>
@@ -592,10 +1313,61 @@
       </div>
     </section>
 
+    <!-- MODAL PARA PROYECTOS -->
+    <div id="project-modal" class="project-modal">
+      <div class="project-modal-content">
+        <span class="project-modal-close">&times;</span>
+        <div class="project-modal-body">
+          <div class="project-modal-image">
+            <img id="modal-project-img" src="" alt="" />
+          </div>
+          <div class="project-modal-info">
+            <h2 id="modal-project-title"></h2>
+            <div
+              id="modal-project-description"
+              class="modal-project-description"
+            ></div>
+            <div class="modal-project-tech" id="modal-project-tech"></div>
+            <div class="modal-project-links">
+              <a
+                id="modal-demo-link"
+                href="javascript:void(0)"
+                target="_blank"
+                class="modal-btn modal-btn-demo"
+                style="display: none"
+              >
+                <span data-translate="projects.demo">Ver Demo</span>
+              </a>
+              <a
+                id="modal-code-link"
+                href="javascript:void(0)"
+                target="_blank"
+                class="modal-btn modal-btn-code"
+              >
+                <span data-translate="projects.code">Código</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL CV -->
+    <div id="cv-modal" class="cv-modal">
+      <div class="cv-modal-content">
+        <span class="cv-modal-close">&times;</span>
+        <div class="cv-modal-body">
+          <iframe id="cv-iframe" src="" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
     <!-- SECCIÓN REDES SOCIALES -->
     <section class="social" id="redes">
       <div class="container">
-        <h2 class="section-title fade-in">Redes Sociales</h2>
+        <h2 class="section-title fade-in" data-translate="social.title">
+          Redes Sociales
+        </h2>
         <div class="social-links fade-in">
           <a
             href="https://www.linkedin.com/in/juliancontreraslucero"
@@ -622,7 +1394,7 @@
             />
           </a>
           <a
-            href="jjulian.contrerass@gmail.com"
+            href="mailto:jjulian.contrerass@gmail.com"
             class="social-link"
             title="Email"
           >
@@ -640,29 +1412,62 @@
     <!-- SECCIÓN CONTACTO -->
     <section class="contact" id="contacto">
       <div class="container">
-        <h2 class="section-title fade-in">Contacto</h2>
+        <h2 class="section-title fade-in" data-translate="contact.title">
+          Contacto
+        </h2>
         <form class="contact-form fade-in" id="contact-form">
           <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required />
+            <label for="name" data-translate="contact.name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              data-translate="contact.name"
+              required
+            />
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <label for="email" data-translate="contact.email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              data-translate="contact.email"
+              required
+            />
           </div>
 
           <div class="form-group">
-            <label for="subject">Asunto</label>
-            <input type="text" id="subject" name="subject" required />
+            <label for="subject" data-translate="contact.subject">Asunto</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              data-translate="contact.subject"
+              required
+            />
           </div>
 
           <div class="form-group">
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message" data-translate="contact.message"
+              >Mensaje</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              data-translate="contact.message"
+              required
+            ></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+          <button
+            type="submit"
+            class="submit-btn"
+            data-translate="contact.send"
+          >
+            Enviar Mensaje
+          </button>
         </form>
       </div>
     </section>
@@ -670,7 +1475,9 @@
     <!-- PIE DE PÁGINA -->
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2025 Julian Contreras. Todos los derechos reservados.</p>
+        <p data-translate="footer.copyright">
+          &copy; 2025 Julian Contreras. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
 
@@ -689,12 +1496,16 @@
     <div id="toast-container"></div>
 
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-      (function(){
+      (function () {
         emailjs.init("BzMoWWhuLs2W61pPb"); // Public Key de EmailJS
       })();
     </script>
+    <script src="translate.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

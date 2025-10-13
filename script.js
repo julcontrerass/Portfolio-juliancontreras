@@ -27,13 +27,17 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 // DESPLAZAMIENTO SUAVE
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        const href = this.getAttribute('href');
+        // Solo aplicar scroll suave si es un ancla válida (no es solo "#")
+        if (href && href !== '#' && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 });
@@ -733,6 +737,164 @@ modal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
         closeCertificateModal();
+    }
+});
+
+// FILTRADO DE PROYECTOS
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remover clase active de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Agregar clase active al botón clickeado
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+
+            if (filterValue === 'all') {
+                card.style.display = 'block';
+                // Animación de entrada
+                card.style.animation = 'fadeIn 0.5s ease';
+            } else if (category === filterValue) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// MODAL DE PROYECTOS
+const projectModal = document.getElementById('project-modal');
+const projectModalClose = document.querySelector('.project-modal-close');
+const viewMoreButtons = document.querySelectorAll('.btn-view-more');
+
+// Función para abrir el modal de proyecto
+function openProjectModal(projectCard) {
+    const projectData = projectCard.querySelector('.project-data');
+    const projectImage = projectCard.querySelector('.project-img').src;
+    const projectTitle = projectCard.querySelector('.project-title').textContent;
+    const projectDesc = projectData.querySelector('.project-full-desc').innerHTML;
+    const projectTech = projectData.querySelector('.project-tech').innerHTML;
+    const projectDemoLink = projectData.querySelector('.project-demo-link');
+    const projectCodeBtn = projectCard.querySelector('.btn-view-code');
+
+    console.log('Demo Link:', projectDemoLink ? projectDemoLink.textContent.trim() : 'No existe');
+    console.log('Code Link:', projectCodeBtn ? projectCodeBtn.href : 'No existe');
+
+    // Actualizar contenido del modal
+    document.getElementById('modal-project-img').src = projectImage;
+    document.getElementById('modal-project-title').textContent = projectTitle;
+    document.getElementById('modal-project-description').innerHTML = projectDesc;
+    document.getElementById('modal-project-tech').innerHTML = projectTech;
+
+    // Mostrar/ocultar botón de demo según si existe
+    const modalDemoLink = document.getElementById('modal-demo-link');
+    if (projectDemoLink && projectDemoLink.textContent.trim() !== '') {
+        const demoUrl = projectDemoLink.textContent.trim();
+        modalDemoLink.href = demoUrl;
+        modalDemoLink.style.display = 'inline-block';
+        console.log('Demo URL configurada:', demoUrl);
+    } else {
+        modalDemoLink.style.display = 'none';
+        console.log('No hay demo link disponible');
+    }
+
+    // Mostrar/ocultar botón de código según si existe
+    const modalCodeLink = document.getElementById('modal-code-link');
+    if (projectCodeBtn) {
+        modalCodeLink.href = projectCodeBtn.href;
+        modalCodeLink.style.display = 'inline-block';
+    } else {
+        modalCodeLink.style.display = 'none';
+    }
+
+    // Mostrar modal
+    projectModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el modal de proyecto
+function closeProjectModal() {
+    projectModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Event listeners para botones "Ver más"
+viewMoreButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const projectCard = button.closest('.project-card');
+        openProjectModal(projectCard);
+    });
+});
+
+// Cerrar modal al hacer clic en la X
+projectModalClose.addEventListener('click', closeProjectModal);
+
+// Cerrar modal al hacer clic fuera del contenido
+projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        closeProjectModal();
+    }
+});
+
+// Cerrar modal con la tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+        closeProjectModal();
+    }
+});
+
+// MODAL CV
+const cvModal = document.getElementById('cv-modal');
+const cvModalClose = document.querySelector('.cv-modal-close');
+const viewCvBtn = document.getElementById('view-cv-btn');
+const cvIframe = document.getElementById('cv-iframe');
+
+// Función para abrir el modal del CV
+function openCvModal() {
+    // Obtener el idioma actual desde translate.js
+    const currentLang = localStorage.getItem('portfolio-language') || 'es';
+
+    // Elegir el CV según el idioma
+    const cvPath = currentLang === 'es' ? './images/CV/CvEspañol.pdf' : './images/CV/Resume.pdf';
+
+    cvIframe.src = cvPath;
+    cvModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para cerrar el modal del CV
+function closeCvModal() {
+    cvModal.classList.remove('active');
+    cvIframe.src = '';
+    document.body.style.overflow = '';
+}
+
+// Event listener para botón "Ver CV"
+viewCvBtn.addEventListener('click', openCvModal);
+
+// Cerrar modal al hacer clic en la X
+cvModalClose.addEventListener('click', closeCvModal);
+
+// Cerrar modal al hacer clic fuera del contenido
+cvModal.addEventListener('click', (e) => {
+    if (e.target === cvModal) {
+        closeCvModal();
+    }
+});
+
+// Cerrar modal con la tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cvModal.classList.contains('active')) {
+        closeCvModal();
     }
 });
 
