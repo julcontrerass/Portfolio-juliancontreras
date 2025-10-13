@@ -57,7 +57,7 @@ const translations = {
 
     // Experiencia
     'experience.title': 'Experiencia Laboral',
-    'experience.social.period': '2025 - Presente',
+    'experience.social.period': '2025 - Actualidad',
     'experience.social.title': 'Desarrollador Frontend',
     'experience.social.company': 'Social learning.',
     'experience.social.description': 'Desarrollo y mantenimiento de plataformas propias de la empresa, por ejemplo teclab, ipp, onmex.',
@@ -277,13 +277,27 @@ const translations = {
   }
 };
 
-// Estado actual del idioma
-let currentLanguage = localStorage.getItem('portfolio-language') || 'es';
+// Detectar idioma del sistema del usuario
+function detectSystemLanguage() {
+  const browserLang = navigator.language || navigator.userLanguage;
+  // Si el idioma del navegador es inglés, usar 'en', de lo contrario 'es'
+  return browserLang.startsWith('en') ? 'en' : 'es';
+}
+
+// Estado actual del idioma: verifica en este orden
+// 1. portfolio-language (preferencia guardada del portfolio)
+// 2. cvLanguage (preferencia del CV)
+// 3. Idioma del sistema
+let currentLanguage = localStorage.getItem('portfolio-language') ||
+                     localStorage.getItem('cvLanguage') ||
+                     detectSystemLanguage();
 
 // Función para cambiar el idioma
 function changeLanguage(lang) {
   currentLanguage = lang;
+  // Guardar en ambos localStorage keys para sincronizar con el CV
   localStorage.setItem('portfolio-language', lang);
+  localStorage.setItem('cvLanguage', lang);
   updateContent();
   updateLangButton();
 
@@ -377,6 +391,10 @@ function updateToastMessages() {
 
 // Inicializar el sistema de traducción
 function initTranslate() {
+  // Guardar el idioma inicial detectado para sincronización
+  localStorage.setItem('portfolio-language', currentLanguage);
+  localStorage.setItem('cvLanguage', currentLanguage);
+
   // Crear botón de idioma
   createLanguageToggle();
 

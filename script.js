@@ -232,7 +232,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         typeWriter(heroTitle, 'Julian Contreras', 150);
         setTimeout(() => {
-            typeWriter(heroSubtitle, 'Desarrollador Full Stack & Diseñador Web', 50);
+            typeWriter(heroSubtitle, 'Desarrollador Full Stack', 50);
         }, 2000);
     }, 1000);
 });
@@ -860,11 +860,8 @@ const cvIframe = document.getElementById('cv-iframe');
 
 // Función para abrir el modal del CV
 function openCvModal() {
-    // Obtener el idioma actual desde translate.js
-    const currentLang = localStorage.getItem('portfolio-language') || 'es';
-
-    // Elegir el CV según el idioma
-    const cvPath = currentLang === 'es' ? './images/CV/CvEspañol.pdf' : './images/CV/Resume.pdf';
+    // Cargar el CV HTML que tiene traducciones incorporadas
+    const cvPath = './CV/resume.html';
 
     cvIframe.src = cvPath;
     cvModal.classList.add('active');
