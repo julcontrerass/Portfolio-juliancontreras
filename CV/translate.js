@@ -39,6 +39,7 @@ const translations = {
 
         // Proyectos - Grito De Carnaval
         "proj.grito.desc1": "Landing page para evento de carnaval con diseño moderno, diseño responsive, sistema de compra de tickets y galería de fotos. Optimizado para rendimiento y SEO.",
+        "proj.grito.tech": "Tecnologías: HTML, CSS y JS | Live Demo: https://gritodecarnaval.vercel.app/",
 
         // Proyectos - Promo WEB
         "proj.promo.type": "Proyecto Académico - UTN",
