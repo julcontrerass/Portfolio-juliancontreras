@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PortfolioJC</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Vercel Web Analytics -->
     <script>
-      window.va =
-        window.va ||
-        function () {
-          (window.vaq = window.vaq || []).push(arguments);
-        };
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
-    <script defer src="https://portfolio-juliancontrerass.vercel.app/"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <!-- BARRA DE NAVEGACIÓN -->
@@ -289,9 +286,12 @@
               <div class="timeline-description">
                 <p>Certificación Data Analytics</p>
                 <!-- <ul>
-                                
+
                             </ul> -->
               </div>
+              <button class="certificate-btn" data-certificate="images/Certificados/certificadoGoogleAnalytics.png" data-type="image">
+                Ver Certificado
+              </button>
             </div>
           </div>
 
@@ -303,9 +303,12 @@
               <div class="timeline-description">
                 <p>Curso intensivo en Python.</p>
                 <!-- <ul>
-                                
+
                             </ul> -->
               </div>
+              <button class="certificate-btn" data-certificate="images/Certificados/certificadoPython.pdf" data-type="pdf">
+                Ver Certificado
+              </button>
             </div>
           </div>
 
@@ -317,9 +320,12 @@
               <div class="timeline-description">
                 <p>Curso intensivo en JavaScript</p>
                 <!-- <ul>
-                                
+
                             </ul> -->
               </div>
+              <button class="certificate-btn" data-certificate="images/Certificados/certificadoJs.pdf" data-type="pdf">
+                Ver Certificado
+              </button>
             </div>
           </div>
         </div>
@@ -668,6 +674,27 @@
       </div>
     </footer>
 
+    <!-- MODAL PARA CERTIFICADOS -->
+    <div id="certificate-modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-body">
+          <iframe id="certificate-frame" src="" frameborder="0"></iframe>
+          <img id="certificate-image" src="" alt="Certificado" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENEDOR DE NOTIFICACIONES -->
+    <div id="toast-container"></div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("BzMoWWhuLs2W61pPb"); // Public Key de EmailJS
+      })();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

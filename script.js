@@ -77,38 +77,131 @@ document.querySelectorAll('.skill-card').forEach(card => {
     skillLogoObserver.observe(card);
 });
 
-// FORMULARIO DE CONTACTO
+// SISTEMA DE NOTIFICACIONES FLOTANTES (TOAST)
+function showToast(title, message, type = 'info') {
+    const toastContainer = document.getElementById('toast-container');
+
+    // Crear elemento toast
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+
+    // Iconos según el tipo
+    const icons = {
+        success: '✓',
+        error: '✕',
+        warning: '⚠',
+        info: 'ℹ'
+    };
+
+    toast.innerHTML = `
+        <div class="toast-icon">${icons[type] || icons.info}</div>
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <span class="toast-close">×</span>
+    `;
+
+    // Agregar al contenedor
+    toastContainer.appendChild(toast);
+
+    // Evento para cerrar manualmente
+    const closeBtn = toast.querySelector('.toast-close');
+    closeBtn.addEventListener('click', () => {
+        toast.style.animation = 'fadeOut 0.3s ease forwards';
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    });
+
+    // Auto-remover después de 3 segundos
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+        }
+    }, 3000);
+}
+
+// FORMULARIO DE CONTACTO CON EMAILJS
 const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     // Obtener datos del formulario
     const formData = new FormData(this);
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
-    
+
     // Validación simple
     if (!name || !email || !subject || !message) {
-        alert('Por favor, completa todos los campos.');
+        showToast('Error', 'Por favor, completa todos los campos.', 'error');
         return;
     }
-    
-    // Simular envío del formulario
+
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showToast('Error', 'Por favor, ingresa un email válido.', 'error');
+        return;
+    }
+
     const submitBtn = this.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
-    
+
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        alert('¡Mensaje enviado correctamente! Te contactaré pronto.');
-        this.reset();
+
+    // Verificar si EmailJS está disponible
+    if (typeof emailjs === 'undefined') {
+        console.error('EmailJS no está cargado');
+        showToast('Error', 'Error de configuración. Por favor, contacta al administrador.', 'error');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    }, 2000);
+        return;
+    }
+
+    // Parámetros para EmailJS
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_name: 'Julian Contreras',
+        reply_to: email
+    };
+
+    // Enviar email usando EmailJS
+    const SERVICE_ID = 'service_jjahjcf';  // Tu Service ID
+    const TEMPLATE_ID = 'template_j1sxoa3'; // Tu Template ID
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            showToast('¡Éxito!', 'Mensaje enviado correctamente. Te contactaré pronto.', 'success');
+            contactForm.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        })
+        .catch(function(error) {
+            console.error('FAILED...', error);
+
+            // Mostrar mensaje de error más detallado
+            let errorMessage = 'Hubo un problema al enviar el mensaje.';
+
+            if (error.text) {
+                console.error('Error detalle:', error.text);
+                errorMessage += ' Por favor, verifica la configuración de EmailJS.';
+            }
+
+            showToast('Error', errorMessage, 'error');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
 });
 
 // EFECTO DE ESCRITURA PARA HERO
@@ -573,5 +666,74 @@ function addScrollToTop() {
 
 // Agregar botón volver arriba
 addScrollToTop();
+
+// MODAL PARA CERTIFICADOS
+const modal = document.getElementById('certificate-modal');
+const modalClose = document.querySelector('.modal-close');
+const certificateFrame = document.getElementById('certificate-frame');
+const certificateImage = document.getElementById('certificate-image');
+const certificateBtns = document.querySelectorAll('.certificate-btn');
+
+// Función para abrir el modal
+function openCertificateModal(certificatePath, type) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+
+    // Resetear ambos elementos
+    certificateFrame.classList.remove('active');
+    certificateImage.classList.remove('active');
+    certificateFrame.src = '';
+    certificateImage.src = '';
+
+    // Mostrar el elemento correcto según el tipo
+    if (type === 'pdf') {
+        certificateFrame.src = certificatePath;
+        certificateFrame.classList.add('active');
+    } else if (type === 'image') {
+        certificateImage.src = certificatePath;
+        certificateImage.classList.add('active');
+    }
+}
+
+// Función para cerrar el modal
+function closeCertificateModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restaurar scroll del body
+
+    // Limpiar contenido después de la animación
+    setTimeout(() => {
+        certificateFrame.src = '';
+        certificateImage.src = '';
+        certificateFrame.classList.remove('active');
+        certificateImage.classList.remove('active');
+    }, 300);
+}
+
+// Event listeners para los botones de certificado
+certificateBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const certificatePath = btn.getAttribute('data-certificate');
+        const type = btn.getAttribute('data-type');
+        openCertificateModal(certificatePath, type);
+    });
+});
+
+// Cerrar modal al hacer clic en la X
+modalClose.addEventListener('click', closeCertificateModal);
+
+// Cerrar modal al hacer clic fuera del contenido
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeCertificateModal();
+    }
+});
+
+// Cerrar modal con la tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeCertificateModal();
+    }
+});
 
 console.log('Portfolio cargado exitosamente! 🚀');
