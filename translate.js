@@ -369,12 +369,39 @@ function createLanguageToggle() {
   langBtn.addEventListener('click', () => {
     const newLang = currentLanguage === 'es' ? 'en' : 'es';
     changeLanguage(newLang);
+
+    // Cerrar el menú móvil después de cambiar el idioma
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
   });
 
-  // Agregar el botón al navbar
+  // Agregar el botón al navbar (escritorio) y al menú (móvil)
   const navContainer = document.querySelector('.nav-container');
+  const navMenu = document.getElementById('nav-menu');
+
+  // Envolver el botón en un li para que sea consistente con el resto del menú
+  const langItem = document.createElement('li');
+  langItem.className = 'lang-item';
+  langItem.appendChild(langBtn);
+
   if (navContainer) {
-    navContainer.appendChild(langBtn);
+    navContainer.appendChild(langBtn.cloneNode(true));
+
+    // Agregar event listener al botón clonado en el nav-container
+    const desktopBtn = navContainer.querySelector('.lang-toggle');
+    if (desktopBtn) {
+      desktopBtn.addEventListener('click', () => {
+        const newLang = currentLanguage === 'es' ? 'en' : 'es';
+        changeLanguage(newLang);
+      });
+    }
+  }
+
+  // Agregar al menú móvil (dentro del ul)
+  if (navMenu) {
+    navMenu.appendChild(langItem);
   }
 }
 

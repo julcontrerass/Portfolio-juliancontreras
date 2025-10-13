@@ -124,6 +124,25 @@ body {
     object-fit: contain;
 }
 
+/* Ocultar el botón de idioma del menú móvil en escritorio */
+.nav-menu .lang-item {
+    display: none;
+}
+
+/* Estilos para el item de idioma en el menú móvil */
+.lang-item {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lang-item .lang-toggle {
+    margin-left: 0;
+}
+
 /* SECCIÓN HERO */
 .hero {
     height: 100vh;
@@ -1128,6 +1147,16 @@ section {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    /* Ocultar el botón de idioma del nav-container en móvil */
+    .nav-container > .lang-toggle {
+        display: none;
+    }
+
+    /* Mostrar el botón de idioma dentro del menú móvil */
+    .nav-menu .lang-item {
+        display: flex;
     }
 
     .hero h1 {
