@@ -1,7 +1,5 @@
 // FUNCIONALIDAD DE LA BARRA DE NAVEGACIÓN
 const navbar = document.getElementById('navbar');
-const burger = document.getElementById('burger');
-const navMenu = document.getElementById('nav-menu');
 
 // Efecto de scroll en la barra de navegación
 window.addEventListener('scroll', () => {
@@ -10,18 +8,6 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
-});
-
-// Alternar menú móvil
-burger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Cerrar menú móvil al hacer clic en un enlace
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
 });
 
 // DESPLAZAMIENTO SUAVE
@@ -215,7 +201,7 @@ const heroSubtitle = document.querySelector('.hero p');
 function typeWriter(element, text, speed = 100) {
     element.textContent = '';
     let i = 0;
-    
+
     function type() {
         if (i < text.length) {
             element.textContent += text.charAt(i);
@@ -223,30 +209,55 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
+
     type();
 }
 
+// Función para iniciar el efecto de escritura con el idioma actual
+function startTypewriterEffect() {
+    const currentLang = window.getCurrentLanguage ? window.getCurrentLanguage() : 'es';
+    const titleText = currentLang === 'es' ? 'Julian Contreras' : 'Julian Contreras';
+    const subtitleText = currentLang === 'es' ? 'Desarrollador Full Stack' : 'Full Stack Developer';
+
+    if (heroTitle && heroSubtitle) {
+        // Limpiar primero para evitar mezclas
+        heroTitle.textContent = '';
+        heroSubtitle.textContent = '';
+
+        // Iniciar el efecto typewriter
+        setTimeout(() => {
+            typeWriter(heroTitle, titleText, 100);
+            setTimeout(() => {
+                typeWriter(heroSubtitle, subtitleText, 50);
+            }, 2000);
+        }, 100);
+    }
+}
+
 // Iniciar efecto de escritura después de cargar la página
+// Esperamos un poco para asegurar que las traducciones estén inicializadas
 window.addEventListener('load', () => {
     setTimeout(() => {
-        typeWriter(heroTitle, 'Julian Contreras', 150);
-        setTimeout(() => {
-            typeWriter(heroSubtitle, 'Desarrollador Full Stack', 50);
-        }, 2000);
-    }, 1000);
+        startTypewriterEffect();
+    }, 500);
 });
 
-// EFECTO PARALLAX PARA HERO
+// Exponer función para que se pueda llamar al cambiar idioma
+window.restartTypewriterEffect = startTypewriterEffect;
+
+// EFECTO PARALLAX PARA HERO - DESHABILITADO
+// (Comentado porque afecta el centrado del contenido)
+/*
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
     const speed = scrolled * 0.5;
-    
+
     if (heroContent && scrolled < window.innerHeight) {
         heroContent.style.transform = `translateY(${speed}px)`;
     }
 });
+*/
 
 // EFECTO DE PARTÍCULAS PARA HERO
 function createParticles() {
@@ -475,7 +486,22 @@ function addThemeToggle() {
                     color: #ffffff !important;
                     box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
                 }
-                
+
+                .dark-theme .project-card-footer {
+                    background-color: #4a5568 !important;
+                }
+
+                .dark-theme .btn-view-more,
+                .dark-theme .btn-view-code {
+                    background-color: #2d3748 !important;
+                    color: #ffffff !important;
+                }
+
+                .dark-theme .btn-view-more:hover,
+                .dark-theme .btn-view-code:hover {
+                    background-color: #1a202c !important;
+                }
+
                 .dark-theme .social-link {
                     background-color: #4a5568 !important;
                     color: #ffffff !important;
@@ -587,6 +613,64 @@ function addThemeToggle() {
                     background: ${isDark ? '#f7fafc' : '#4a5568'} !important;
                     color: ${isDark ? '#2d3748' : 'white'} !important;
                     z-index: 10001 !important;
+                }
+
+                .dark-theme .floating-nav {
+                    background: rgba(45, 55, 72, 0.95) !important;
+                    backdrop-filter: blur(20px) !important;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                                0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+                }
+
+                .dark-theme .floating-nav:hover {
+                    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6),
+                                0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+                }
+
+                .dark-theme .nav-icon {
+                    color: #a0aec0 !important;
+                }
+
+                .dark-theme .nav-icon:hover {
+                    background: rgba(255, 255, 255, 0.1) !important;
+                    color: #ffffff !important;
+                }
+
+                .dark-theme .nav-icon.active {
+                    background: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%) !important;
+                    color: #1a202c !important;
+                    box-shadow: 0 6px 20px rgba(247, 250, 252, 0.3) !important;
+                }
+
+                .dark-theme .nav-icon.active svg {
+                    color: #1a202c !important;
+                }
+
+                .dark-theme .nav-icon.active:hover {
+                    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%) !important;
+                }
+
+                .dark-theme .nav-label {
+                    background: rgba(45, 55, 72, 0.95) !important;
+                    color: #ffffff !important;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+                }
+
+                .dark-theme .nav-lang-toggle {
+                    background: transparent !important;
+                    border-left-color: rgba(255, 255, 255, 0.2) !important;
+                }
+
+                .dark-theme .nav-lang-toggle:hover {
+                    background: rgba(255, 255, 255, 0.1) !important;
+                }
+
+                .dark-theme .nav-lang-toggle .lang-flag {
+                    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2) !important;
+                }
+
+                .dark-theme .nav-lang-toggle:hover .lang-flag {
+                    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3) !important;
                 }
             `;
             
@@ -894,5 +978,61 @@ document.addEventListener('keydown', (e) => {
         closeCvModal();
     }
 });
+
+// BARRA DE NAVEGACIÓN INFERIOR FLOTANTE
+const floatingNavIcons = document.querySelectorAll('.floating-nav .nav-icon');
+
+// Función para actualizar el icono activo según la sección visible
+function updateActiveNavIcon() {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollPosition = window.scrollY + 200; // Offset para mejor detección
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // Remover clase active de todos los iconos
+            floatingNavIcons.forEach(icon => {
+                icon.classList.remove('active');
+            });
+
+            // Agregar clase active al icono correspondiente
+            const activeIcon = document.querySelector(`.floating-nav .nav-icon[data-section="${sectionId}"]`);
+            if (activeIcon) {
+                activeIcon.classList.add('active');
+            }
+        }
+    });
+}
+
+// Actualizar en scroll
+window.addEventListener('scroll', updateActiveNavIcon);
+
+// Navegación suave al hacer clic en los iconos
+floatingNavIcons.forEach(icon => {
+    icon.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetSection = this.getAttribute('data-section');
+        const targetElement = document.getElementById(targetSection);
+
+        if (targetElement) {
+            // Remover clase active de todos los iconos
+            floatingNavIcons.forEach(i => i.classList.remove('active'));
+            // Agregar clase active al icono clickeado
+            this.classList.add('active');
+
+            // Scroll suave a la sección
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Inicializar el estado activo al cargar la página
+updateActiveNavIcon();
 
 console.log('Portfolio cargado exitosamente! 🚀');

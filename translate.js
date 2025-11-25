@@ -303,6 +303,11 @@ function changeLanguage(lang) {
 
   // Actualizar atributo lang del HTML
   document.documentElement.lang = lang;
+
+  // Reiniciar el efecto typewriter con el nuevo idioma
+  if (typeof window.restartTypewriterEffect === 'function') {
+    window.restartTypewriterEffect();
+  }
 }
 
 // Función para actualizar el contenido
@@ -313,7 +318,11 @@ function updateContent() {
     const key = element.getAttribute('data-translate');
     const translation = translations[currentLanguage][key];
 
-    if (translation) {
+    // Excluir solo el título y subtítulo del hero (el typewriter se encarga de ellos)
+    // El botón hero.cta sí se actualiza normalmente
+    const isHeroTextElement = key === 'hero.title' || key === 'hero.subtitle';
+
+    if (translation && !isHeroTextElement) {
       // Si es un input o textarea, actualizar el placeholder
       if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
         element.placeholder = translation;
@@ -337,72 +346,35 @@ function updateContent() {
     submitBtn.textContent = translations[currentLanguage]['contact.send'];
   }
 
-  // Actualizar el efecto de escritura del hero si está visible
-  const heroTitle = document.querySelector('.hero h1');
-  const heroSubtitle = document.querySelector('.hero p');
-
-  if (heroTitle && window.scrollY < 100) {
-    heroTitle.textContent = translations[currentLanguage]['hero.title'];
-    heroSubtitle.textContent = translations[currentLanguage]['hero.subtitle'];
-  }
+  // NO actualizar el hero automáticamente - el typewriter se encarga de eso
 }
 
 // Función para actualizar el botón de idioma
 function updateLangButton() {
-  const langBtn = document.getElementById('lang-toggle');
-  if (langBtn) {
-    langBtn.innerHTML = currentLanguage === 'es'
-      ? '<img src="https://img.icons8.com/color/24/usa.png" alt="English" title="Change to English" />'
-      : '<img src="https://img.icons8.com/fluency/24/argentina-circular.png" alt="Español" title="Cambiar a Español" />';
+  // Actualizar botón flotante (único botón de idioma)
+  const floatingLangBtn = document.getElementById('floating-lang-toggle');
+  if (floatingLangBtn) {
+    const flagImg = floatingLangBtn.querySelector('.lang-flag');
+    if (flagImg) {
+      if (currentLanguage === 'es') {
+        // Mostrando español, siguiente opción: inglés (USA)
+        flagImg.src = 'https://img.icons8.com/color/24/usa.png';
+        flagImg.alt = 'English';
+        floatingLangBtn.title = 'Change to English';
+      } else {
+        // Mostrando inglés, siguiente opción: español (Argentina)
+        flagImg.src = 'https://img.icons8.com/fluency/24/argentina-circular.png';
+        flagImg.alt = 'Español';
+        floatingLangBtn.title = 'Cambiar a Español';
+      }
+    }
   }
 }
 
 // Función para crear el botón de cambio de idioma
 function createLanguageToggle() {
-  const langBtn = document.createElement('button');
-  langBtn.id = 'lang-toggle';
-  langBtn.className = 'lang-toggle';
-  langBtn.innerHTML = currentLanguage === 'es'
-    ? '<img src="https://img.icons8.com/color/24/usa.png" alt="English" title="Change to English" />'
-    : '<img src="https://img.icons8.com/fluency/24/argentina-circular.png" alt="Español" title="Cambiar a Español" />';
-
-  langBtn.addEventListener('click', () => {
-    const newLang = currentLanguage === 'es' ? 'en' : 'es';
-    changeLanguage(newLang);
-
-    // Cerrar el menú móvil después de cambiar el idioma
-    const navMenu = document.getElementById('nav-menu');
-    if (navMenu && navMenu.classList.contains('active')) {
-      navMenu.classList.remove('active');
-    }
-  });
-
-  // Agregar el botón al navbar (escritorio) y al menú (móvil)
-  const navContainer = document.querySelector('.nav-container');
-  const navMenu = document.getElementById('nav-menu');
-
-  // Envolver el botón en un li para que sea consistente con el resto del menú
-  const langItem = document.createElement('li');
-  langItem.className = 'lang-item';
-  langItem.appendChild(langBtn);
-
-  if (navContainer) {
-    navContainer.appendChild(langBtn.cloneNode(true));
-
-    // Agregar event listener al botón clonado en el nav-container
-    const desktopBtn = navContainer.querySelector('.lang-toggle');
-    if (desktopBtn) {
-      desktopBtn.addEventListener('click', () => {
-        const newLang = currentLanguage === 'es' ? 'en' : 'es';
-        changeLanguage(newLang);
-      });
-    }
-  }
-
-  // Agregar al menú móvil (dentro del ul)
-  if (navMenu) {
-    navMenu.appendChild(langItem);
-  }
+  // Ya no creamos el botón en el navbar, solo inicializamos el sistema
+  // El botón de idioma ahora solo está en la barra flotante
 }
 
 // Función para actualizar las notificaciones toast con el idioma correcto
@@ -425,11 +397,20 @@ function initTranslate() {
   // Crear botón de idioma
   createLanguageToggle();
 
-  // Aplicar idioma guardado
+  // Aplicar idioma guardado (sin afectar hero.title y hero.subtitle)
   updateContent();
 
   // Actualizar atributo lang del HTML
   document.documentElement.lang = currentLanguage;
+
+  // Agregar event listener al botón flotante de idioma
+  const floatingLangBtn = document.getElementById('floating-lang-toggle');
+  if (floatingLangBtn) {
+    floatingLangBtn.addEventListener('click', () => {
+      const newLang = currentLanguage === 'es' ? 'en' : 'es';
+      changeLanguage(newLang);
+    });
+  }
 
   console.log(`Sistema de traducción inicializado. Idioma: ${currentLanguage}`);
 }
