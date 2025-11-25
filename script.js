@@ -441,9 +441,9 @@ function addThemeToggle() {
                 .dark-theme .navbar {
                     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
                 }
-                
+
                 .dark-theme .navbar.scrolled {
-                    background: rgba(26, 32, 44, 0.95) !important;
+                    background: rgba(26, 32, 44, 0.7) !important;
                 }
                 
                 .dark-theme .hero {
@@ -489,6 +489,14 @@ function addThemeToggle() {
 
                 .dark-theme .project-card-footer {
                     background-color: #4a5568 !important;
+                }
+
+                .dark-theme .project-tech-icons img {
+                    filter: grayscale(0%) brightness(1.1);
+                }
+
+                .dark-theme .project-tech-icons img:hover {
+                    filter: brightness(1.3);
                 }
 
                 .dark-theme .btn-view-more,
@@ -696,64 +704,6 @@ function addThemeToggle() {
 
 // Agregar alternador de tema
 addThemeToggle();
-
-// BOTÓN VOLVER ARRIBA
-function addScrollToTop() {
-    const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '↑';
-    scrollBtn.id = 'scroll-to-top';
-    scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: none;
-        background: #4a5568;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 10000;
-        opacity: 0;
-        transform: translateY(100px);
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    `;
-    
-    scrollBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    window.addEventListener('scroll', () => {
-        const isDarkMode = document.body.classList.contains('dark-theme');
-        
-        if (window.scrollY > 500) {
-            scrollBtn.style.opacity = '1';
-            scrollBtn.style.transform = 'translateY(0)';
-        } else {
-            scrollBtn.style.opacity = '0';
-            scrollBtn.style.transform = 'translateY(100px)';
-        }
-        
-        // Actualizar colores del botón basado en el tema
-        if (isDarkMode) {
-            scrollBtn.style.background = '#4a5568';
-            scrollBtn.style.color = '#e0e0e0';
-        } else {
-            scrollBtn.style.background = '#4a5568';
-            scrollBtn.style.color = 'white';
-        }
-    });
-    
-    document.body.appendChild(scrollBtn);
-}
-
-// Agregar botón volver arriba
-addScrollToTop();
 
 // MODAL PARA CERTIFICADOS
 const modal = document.getElementById('certificate-modal');

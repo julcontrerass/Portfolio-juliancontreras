@@ -18,8 +18,9 @@ const translations = {
 
     // Sobre Mí
     'about.title': 'Sobre Mí',
-    'about.text1': 'Soy un desarrollador frontend con experiencia en Vue.js (Vue 2), enfocado en crear interfaces modernas, intuitivas y eficientes. Actualmente me encuentro ampliando mi perfil hacia el desarrollo backend, aprendiendo Java con Spring Boot y el manejo de bases de datos relacionales y no relacionales, con el objetivo de convertirme en un desarrollador full stack.',
-    'about.text2': 'Me apasiona aprender nuevas tecnologías, optimizar procesos y participar en proyectos que representen un desafío. Busco seguir creciendo profesionalmente, combinando mis habilidades en frontend con un sólido conocimiento en backend para construir aplicaciones completas, escalables y de alto rendimiento.',
+    'about.text1': 'Soy un Desarrollador Full Stack con una sólida base en Frontend, desarrollada a través de mi experiencia en Vue.js (Vue 2), donde me especializo en crear interfaces modernas, intuitivas y eficientes.',
+    'about.text2': 'Actualmente he completado mi transición hacia el desarrollo Backend, trabajando con Java y Spring Boot para construir lógica de negocio robusta, y PostgreSQL para gestión de datos. Esto me permite desarrollar aplicaciones completas de extremo a extremo.',
+    'about.text3': 'Me apasiona el aprendizaje continuo de nuevas tecnologías, la optimización de procesos y enfrentar desafíos técnicos complejos. Mi objetivo es combinar mis habilidades en Frontend y Backend para construir aplicaciones escalables, robustas y de alto rendimiento.',
     'about.viewCV': 'Ver CV',
 
     // Conocimientos
@@ -156,8 +157,9 @@ const translations = {
 
     // About
     'about.title': 'About Me',
-    'about.text1': 'I am a frontend developer with experience in Vue.js (Vue 2), focused on creating modern, intuitive and efficient interfaces. Currently I am expanding my profile towards backend development, learning Java with Spring Boot and handling relational and non-relational databases, with the goal of becoming a full stack developer.',
-    'about.text2': 'I am passionate about learning new technologies, optimizing processes and participating in projects that represent a challenge. I seek to continue growing professionally, combining my frontend skills with solid backend knowledge to build complete, scalable and high-performance applications.',
+    'about.text1': 'I am a Full Stack Developer with a solid Frontend foundation, honed through my experience with Vue.js (Vue 2), where I specialize in creating modern, intuitive, and efficient user interfaces.',
+    'about.text2': 'I have successfully transitioned into Backend development and currently work with Java and Spring Boot to build robust business logic, utilizing PostgreSQL for data management. This skill set allows me to develop complete, end-to-end applications.',
+    'about.text3': 'I am passionate about continuous learning, process optimization, and tackling complex technical challenges. My goal is to leverage my combined Frontend and Backend expertise to build scalable, robust, and high-performance applications.',
     'about.viewCV': 'View Resume',
 
     // Skills
