@@ -13,7 +13,7 @@ const translations = {
 
         // Educación - Talento Tech
         "edu.talento.title": "Back-End / Java - Formación en Backend con Java, Spring Boot, bases de datos",
-        "edu.talento.period": "2025 – Actualidad",
+        "edu.talento.period": "2025",
         "edu.talento.spec": "Especialización en Backend",
 
         // Educación - CoderHouse
@@ -115,7 +115,7 @@ const translations = {
 
         // Education - Talento Tech
         "edu.talento.title": "Back-End / Java - Backend Training with Java, Spring Boot, databases",
-        "edu.talento.period": "2025 – Present",
+        "edu.talento.period": "2025",
         "edu.talento.spec": "Backend Specialization",
 
         // Education - CoderHouse
