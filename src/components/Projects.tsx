@@ -71,6 +71,24 @@ const Projects: React.FC = () => {
       demoUrl: 'https://joup-lab-studio.vercel.app/'
     },
     {
+      id: 'tuki',
+      category: 'university',
+      image: '/images/TukiAsistenteDeSalon.png',
+      title: t('projects.tuki.title'),
+      description: t('projects.tuki.desc1'),
+      fullDescription: [
+        t('projects.tuki.desc1'),
+        `<strong>${t('projects.tuki.desc2')}</strong>`,
+        t('projects.tuki.desc3').replace(/\n/g, '<br />')
+      ],
+      technologies: [
+        { name: 'C#', icon: 'https://img.icons8.com/color/24/c-sharp-logo.png' },
+        { name: 'ASP.NET', icon: 'https://img.icons8.com/color/24/asp.png' },
+        { name: 'SQL Server', icon: 'https://img.icons8.com/color/24/microsoft-sql-server.png' }
+      ],
+      codeUrl: 'https://github.com/julcontrerass/TukiTuAsistenteDeSalon.git'
+    },
+    {
       id: 'grito',
       category: 'sold',
       image: '/images/Carnaval2025.png',

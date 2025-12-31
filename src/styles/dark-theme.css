@@ -146,9 +146,12 @@ body.dark-theme {
 }
 
 .dark-theme .project-modal-content,
-.dark-theme .modal-content,
-.dark-theme .cv-modal-content {
+.dark-theme .modal-content {
   background-color: #2d3748 !important;
+}
+
+.dark-theme .cv-modal-content {
+  background-color: white !important;
 }
 
 .dark-theme .project-modal-info h2,
@@ -281,24 +284,34 @@ body.dark-theme {
 }
 
 /* Modales en tema oscuro */
-.dark-theme .modal-content,
-.dark-theme .cv-modal-content {
+.dark-theme .modal-content {
   background-color: #2d3748 !important;
+}
+
+.dark-theme .cv-modal-content {
+  background-color: white !important;
 }
 
 .dark-theme .modal-body {
   background: #1a202c !important;
 }
 
-.dark-theme .modal-close,
-.dark-theme .cv-modal-close {
+.dark-theme .modal-close {
   background: #4a5568 !important;
   color: #ffffff !important;
 }
 
-.dark-theme .modal-close:hover,
-.dark-theme .cv-modal-close:hover {
+.dark-theme .cv-modal-close {
+  background: white !important;
+  color: #333 !important;
+}
+
+.dark-theme .modal-close:hover {
   background: #2d3748 !important;
+}
+
+.dark-theme .cv-modal-close:hover {
+  background: #f0f0f0 !important;
 }
 
 /* Partículas en Hero para tema oscuro */

@@ -26,9 +26,18 @@ const translations = {
         "edu.plataforma.title": "Curso intensivo en Python",
         "edu.plataforma.period": "2024",
 
-        // Experiencia
+        // Experiencia - TukiCode
+        "exp.tukicode.title": "Full Stack Developer",
+        "exp.tukicode.period": "2025 – Actualidad",
+        "exp.tukicode.type": "Freelance",
+        "exp.tukicode.description": "Software Studio co-fundado junto a dos compañeros más de la facultad, especializado en el desarrollo de proyectos personalizados para diversos clientes.",
+        "exp.tukicode.task1": "Desarrollo full stack de aplicaciones web personalizadas.",
+        "exp.tukicode.task2": "Arquitectura y diseño de soluciones tecnológicas adaptadas a necesidades específicas.",
+        "exp.tukicode.task3": "Gestión de proyectos y comunicación directa con clientes para garantizar entregas de calidad.",
+
+        // Experiencia - Social Learning
         "exp.social.title": "Desarrollador Frontend",
-        "exp.social.period": "2025 – Actualidad",
+        "exp.social.period": "2025",
         "exp.social.task1": "Desarrollo y mantenimiento de plataformas (TecLab, IPP, Onmex) con nuevas implementaciones y mejoras en UX.",
         "exp.social.task2": "Liderazgo de equipo de 4 desarrolladores juniors en prácticas profesionales.",
 
@@ -36,6 +45,15 @@ const translations = {
         "proj.type.freelance": "Proyecto Freelance",
         "proj.type.academic": "Proyecto Académico/Personal",
         "proj.type.team": "Proyecto en Equipo",
+
+        // Proyectos - Tuki Tu Asistente De Salón
+        "proj.tukitu.type": "Proyecto Académico - UTN",
+        "proj.tukitu.desc1": "Sistema de gestión de mesas para restaurantes y cafeterías desarrollado en equipo de 3 personas. Gestiona todos los servicios necesarios incluyendo ventas de mesa y mostrador, gestión de stock, controles de caja y operaciones administrativas completas.",
+        "proj.tukitu.tech": "Tecnologías: C#, ASP.NET, SQL Server | GitHub: github.com/julcontrerass/TukiTuAsistenteDeSalon.git",
+
+        // Proyectos - Joup Lab & Studio
+        "proj.jouplab.desc1": "Landing page profesional para estudio de educación y consultoría de café. Presenta diseño elegante, secciones de información de servicios, portafolio de trabajos, formulario de contacto y diseño responsive completo optimizado para todos los dispositivos.",
+        "proj.jouplab.tech": "Tecnologías: HTML, CSS, JavaScript | Live Demo: https://joup-lab-studio.vercel.app/",
 
         // Proyectos - Grito De Carnaval
         "proj.grito.desc1": "Landing page para evento de carnaval con diseño moderno, diseño responsive, sistema de compra de tickets y galería de fotos. Optimizado para rendimiento y SEO.",
@@ -110,9 +128,18 @@ const translations = {
         "edu.plataforma.title": "Intensive Python Course",
         "edu.plataforma.period": "2024",
 
-        // Experience
+        // Experience - TukiCode
+        "exp.tukicode.title": "Full Stack Developer",
+        "exp.tukicode.period": "2025 – Present",
+        "exp.tukicode.type": "Freelance",
+        "exp.tukicode.description": "Software Studio co-founded with two college classmates, specialized in developing customized projects for various clients.",
+        "exp.tukicode.task1": "Full stack development of custom web applications.",
+        "exp.tukicode.task2": "Architecture and design of technological solutions adapted to specific needs.",
+        "exp.tukicode.task3": "Project management and direct client communication to ensure quality deliveries.",
+
+        // Experience - Social Learning
         "exp.social.title": "Frontend Developer",
-        "exp.social.period": "2025 – Present",
+        "exp.social.period": "2025",
         "exp.social.task1": "Development and maintenance of platforms (TecLab, IPP, Onmex) with new implementations and UX improvements.",
         "exp.social.task2": "Leadership of team of 4 junior developers in professional internships.",
 
@@ -121,8 +148,18 @@ const translations = {
         "proj.type.academic": "Academic/Personal Project",
         "proj.type.team": "Team Project",
 
+        // Projects - Tuki Tu Asistente De Salón
+        "proj.tukitu.type": "Academic Project - UTN",
+        "proj.tukitu.desc1": "Table management system for restaurants and cafeterias developed in a team of 3. Manages all necessary services including table and counter sales, stock management, cash register controls, and comprehensive administrative operations.",
+        "proj.tukitu.tech": "Technologies: C#, ASP.NET, SQL Server | GitHub: github.com/julcontrerass/TukiTuAsistenteDeSalon.git",
+
+        // Projects - Joup Lab & Studio
+        "proj.jouplab.desc1": "Professional landing page for coffee education and consulting studio. Features elegant design, service information sections, portfolio showcase, contact form, and full responsive layout optimized for all devices.",
+        "proj.jouplab.tech": "Technologies: HTML, CSS, JavaScript | Live Demo: https://joup-lab-studio.vercel.app/",
+
         // Projects - Grito De Carnaval
         "proj.grito.desc1": "Landing page for carnival event with modern design, responsive layout, ticket purchasing system, and photo gallery. Optimized for performance and SEO.",
+        "proj.grito.tech": "Technologies: HTML, CSS, JavaScript | Live Demo: https://gritodecarnaval.vercel.app/",
 
         // Projects - Promo WEB
         "proj.promo.type": "Academic Project - UTN",
