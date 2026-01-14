@@ -38,8 +38,8 @@ const translations = {
         // Experiencia - Social Learning
         "exp.social.title": "Desarrollador Frontend",
         "exp.social.period": "2025",
-        "exp.social.task1": "Desarrollo y mantenimiento de plataformas (TecLab, IPP, Onmex) con nuevas implementaciones y mejoras en UX.",
-        "exp.social.task2": "Liderazgo de equipo de 4 desarrolladores juniors en prácticas profesionales.",
+        "exp.social.task1": "Desarrollo Full Stack: Evolucioné el frontend de plataformas escalables (TecLab, IPP) con Vue 3 y participé en el desarrollo de microservicios robustos con Java y Spring Boot.<br>Gestión Ágil: Ejecuté tareas críticas en Sprints, garantizando la estabilidad del sistema mediante la resolución de bugs complejos y la optimización constante de la UX.",
+        "exp.social.task2": "Liderazgo de Equipo: Responsable de guiar a 4 desarrolladores Junior en la estructura de proyectos de principio a fin, proporcionando asistencia técnica constante y resolviendo cuellos de botella en el desarrollo. • Technical Mentorship: Supervisión del avance técnico y apoyo en la toma de decisiones de arquitectura y Implementación de estándares de codificación y flujos de trabajo en Git para el equipo",
 
         // Tipos de Proyectos
         "proj.type.freelance": "Proyecto Freelance",
@@ -47,13 +47,15 @@ const translations = {
         "proj.type.team": "Proyecto en Equipo",
 
         // Proyectos - Tuki Tu Asistente De Salón
-        "proj.tukitu.type": "Proyecto Académico - UTN",
-        "proj.tukitu.desc1": "Sistema de gestión de mesas para restaurantes y cafeterías desarrollado en equipo de 3 personas. Gestiona todos los servicios necesarios incluyendo ventas de mesa y mostrador, gestión de stock, controles de caja y operaciones administrativas completas.",
-        "proj.tukitu.tech": "Tecnologías: C#, ASP.NET, SQL Server | GitHub: github.com/julcontrerass/TukiTuAsistenteDeSalon.git",
+        "proj.tukitu.status": "En desarrollo activo",
+        "proj.tukitu.current": "Estado actual: Evolucionando de proyecto académico a solución profesional escalable para el sector gastronómico.",
+        "proj.tukitu.impact": "Impacto: Lidero junto a mi equipo la implementación de funcionalidades avanzadas como gestión de stock, controles de caja y operaciones administrativas completas.",
+        "proj.tukitu.tech": "Tecnologías: C#, ASP.NET, SQL Server | GitHub: github.com/julcontrerass/TukiTuAsistenteDeSalon.git | Live Demo: https://share.google/CTITQ4hc4jjzb2uyY",
 
-        // Proyectos - Joup Lab & Studio
+        // Proyectos - Joup Lab & Studio\
+        "proj.jouplab.status": "En desarrollo activo",
         "proj.jouplab.desc1": "Landing page profesional para estudio de educación y consultoría de café. Presenta diseño elegante, secciones de información de servicios, portafolio de trabajos, formulario de contacto y diseño responsive completo optimizado para todos los dispositivos.",
-        "proj.jouplab.tech": "Tecnologías: HTML, CSS, JavaScript | Live Demo: https://joup-lab-studio.vercel.app/",
+        "proj.jouplab.tech": "Tecnologías: React, TypeScript | Live Demo: https://joup-lab-studio.vercel.app/",
 
         // Proyectos - Grito De Carnaval
         "proj.grito.desc1": "Landing page para evento de carnaval con diseño moderno, diseño responsive, sistema de compra de tickets y galería de fotos. Optimizado para rendimiento y SEO.",
@@ -93,12 +95,16 @@ const translations = {
         "proj.airland.tech": "Tecnologías: React, Node.js, Express, Firebase | GitHub: github.com/lauticometti/airland",
 
         // Habilidades
-        "skills.frontend.label": "Frontend:",
-        "skills.backend.label": "Backend:",
-        "skills.database.label": "Base de Datos:",
-        "skills.tools.label": "Herramientas:",
+        "skills.mainlang.label": "Lenguajes Principales:",
+        "skills.mainlang.text": "C#, .NET (WinForms/WPF), Java (Spring Boot), JavaScript/TypeScript",
+        "skills.database.label": "Bases de Datos:",
+        "skills.database.text": "SQL Server 2017, PostgreSQL, MySQL",
+        "skills.tools.label": "Herramientas y Otros:",
+        "skills.tools.text": "Visual Studio 2017/2022, Git, Jira (Gestión de incidentes), Docker, AWS",
+        "skills.learning.label": "En aprendizaje / Deseable:",
+        "skills.learning.text": "VB.NET, VB 6.0, TFS",
         "skills.languages.label": "Idiomas:",
-        "skills.languages.text": "Español (Nativo), Inglés (B1 Intermedio), Portugués (Intermedio)",
+        "skills.languages.text": "Español (Nativo), Inglés (B1 Intermedio)",
         "skills.interests.label": "Intereses:",
         "skills.interests.text": "Desarrollo backend, optimización de sistemas, arquitectura escalable, aprendizaje continuo en tecnologías emergentes"
     },
@@ -149,13 +155,14 @@ const translations = {
         "proj.type.team": "Team Project",
 
         // Projects - Tuki Tu Asistente De Salón
-        "proj.tukitu.type": "Academic Project - UTN",
-        "proj.tukitu.desc1": "Table management system for restaurants and cafeterias developed in a team of 3. Manages all necessary services including table and counter sales, stock management, cash register controls, and comprehensive administrative operations.",
-        "proj.tukitu.tech": "Technologies: C#, ASP.NET, SQL Server | GitHub: github.com/julcontrerass/TukiTuAsistenteDeSalon.git",
+        "proj.tukitu.status": "In active development",
+        "proj.tukitu.current": "Current status: Evolving from academic project to professional scalable solution for the food service sector.",
+        "proj.tukitu.impact": "Impact: Leading with my team the implementation of advanced features such as stock management, cash register controls, and comprehensive administrative operations.",
+        "proj.tukitu.tech": "Technologies: C#, ASP.NET, SQL Server | GitHub: github.com/julcontrerass/TukiTuAsistenteDeSalon.git | Live Demo: https://share.google/CTITQ4hc4jjzb2uyY",
 
         // Projects - Joup Lab & Studio
         "proj.jouplab.desc1": "Professional landing page for coffee education and consulting studio. Features elegant design, service information sections, portfolio showcase, contact form, and full responsive layout optimized for all devices.",
-        "proj.jouplab.tech": "Technologies: HTML, CSS, JavaScript | Live Demo: https://joup-lab-studio.vercel.app/",
+        "proj.jouplab.tech": "Technologies: React, TypeScript | Live Demo: https://joup-lab-studio.vercel.app/",
 
         // Projects - Grito De Carnaval
         "proj.grito.desc1": "Landing page for carnival event with modern design, responsive layout, ticket purchasing system, and photo gallery. Optimized for performance and SEO.",
@@ -195,12 +202,16 @@ const translations = {
         "proj.airland.tech": "Technologies: React, Node.js, Express, Firebase | GitHub: github.com/lauticometti/airland",
 
         // Skills
-        "skills.frontend.label": "Frontend:",
-        "skills.backend.label": "Backend:",
-        "skills.database.label": "Database:",
-        "skills.tools.label": "Tools:",
+        "skills.mainlang.label": "Main Languages:",
+        "skills.mainlang.text": "C#, .NET (WinForms/WPF), Java (Spring Boot), JavaScript/TypeScript",
+        "skills.database.label": "Databases:",
+        "skills.database.text": "SQL Server 2017, PostgreSQL, MySQL",
+        "skills.tools.label": "Tools & Others:",
+        "skills.tools.text": "Visual Studio 2017/2022, Git, Jira (Incident Management), Docker, AWS",
+        "skills.learning.label": "Learning / Desirable:",
+        "skills.learning.text": "VB.NET, VB 6.0, TFS",
         "skills.languages.label": "Languages:",
-        "skills.languages.text": "Spanish (Native), English (B1 Intermediate), Portuguese (Intermediate)",
+        "skills.languages.text": "Spanish (Native), English (B1 Intermediate)",
         "skills.interests.label": "Interests:",
         "skills.interests.text": "Backend development, system optimization, scalable architecture, continuous learning in emerging technologies"
     }
@@ -240,7 +251,7 @@ function updateContent() {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[currentLanguage][key];
             } else {
-                element.textContent = translations[currentLanguage][key];
+                element.innerHTML = translations[currentLanguage][key];
             }
         }
     });

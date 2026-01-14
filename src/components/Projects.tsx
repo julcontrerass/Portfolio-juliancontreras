@@ -86,7 +86,8 @@ const Projects: React.FC = () => {
         { name: 'ASP.NET', icon: 'https://img.icons8.com/color/24/asp.png' },
         { name: 'SQL Server', icon: 'https://img.icons8.com/color/24/microsoft-sql-server.png' }
       ],
-      codeUrl: 'https://github.com/julcontrerass/TukiTuAsistenteDeSalon.git'
+      codeUrl: 'https://github.com/julcontrerass/TukiTuAsistenteDeSalon.git',
+      demoUrl: 'https://share.google/CTITQ4hc4jjzb2uyY'
     },
     {
       id: 'grito',
@@ -226,7 +227,8 @@ const Projects: React.FC = () => {
         { name: 'Express', icon: 'https://img.icons8.com/fluency/24/express-js.png' },
         { name: 'Firebase', icon: 'https://img.icons8.com/color/24/firebase.png' }
       ],
-      codeUrl: 'https://github.com/lauticometti/AirLand'
+      codeUrl: 'https://github.com/lauticometti/AirLand',
+      demoUrl: 'https://airland-9c55f.web.app/'
     },
     {
       id: 'countries',
